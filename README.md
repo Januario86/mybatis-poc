@@ -1,8 +1,8 @@
-Um projeto Java 17+ demonstrando o uso do MyBatis para persistência em banco de dados com H2 (banco em memória).
+Um projeto Java 17+ demonstrando o uso do MyBatis para persistência em banco de dados com Postgres
 
 📌 Pré-requisitos
 Java JDK 17+
-
+Postgres(Docker opcional)
 Maven 3.6+
 
 IntelliJ IDEA (ou outra IDE de sua preferência)
@@ -13,32 +13,19 @@ IntelliJ IDEA (ou outra IDE de sua preferência)
 git clone git@github.com:Januario86/mybatis-poc.git
 cd mybatis-poc
 
-mybatis-demo/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/mybatis/
-│   │   │       ├── model/User.java          # Classe de modelo (entidade)
-│   │   │       ├── mapper/UserMapper.java   # Interface do Mapper
-│   │   │       ├── utils/MyBatisUtil.java   # Configuração do MyBatis
-│   │   │       └── App.java                # Classe principal
-│   │   └── resources/
-│   │       ├── mybatis-config.xml           # Configuração global do MyBatis
-│   │       └── com/example/mybatis/mapper/UserMapper.xml  # SQL Mappings
-│   └── test/                               # (Opcional) Testes
-├── pom.xml                                 # Dependências Maven
-└── README.md                               # Este arquivo
-
 🔧 Configuração do Banco de Dados
-O projeto usa H2 Database em memória (jdbc:h2:mem:testdb).
+O projeto usa postgres
 
-URL: jdbc:h2:mem:testdb
-
+URL: jdbc:postgresql://localhost:5432/meudb
 Usuário: sa
+Senha: sa
 
-Senha: (vazia)
-
-A tabela users é criada automaticamente na inicialização.
+Criar a  tabela users 
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE
+);
 
  Funcionalidades Implementadas
 ✅ CRUD Completo
@@ -56,7 +43,7 @@ Java 17
 
 MyBatis 3.5+ (Mapeamento SQL → Objetos Java)
 
-H2 Database (Banco em memória para testes)
+POstgres (Banco Relacional)
 
 Lombok (Redução de boilerplate code)
 
