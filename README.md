@@ -43,7 +43,7 @@ Java 17
 
 MyBatis 3.5+ (Mapeamento SQL → Objetos Java)
 
-POstgres (Banco Relacional)
+Postgres (Banco Relacional)
 
 Lombok (Redução de boilerplate code)
 
