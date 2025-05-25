@@ -25,22 +25,22 @@ public class Main {
             User newUser = new User();
             newUser.setName("João Silva");
             newUser.setEmail("joao@example.com");
-            mapper.insert(newUser);
-            session.commit();
-            System.out.println("Usuário criado com ID: " + newUser.getId());
+//            mapper.insert(newUser);
+//            session.commit();
+//            System.out.println("Usuário criado com ID: " + newUser.getId());
 
             // Buscar todos os usuários
             List<User> users = mapper.findAll();
             System.out.println("\nTodos os usuários:");
             users.forEach(System.out::println);
 
-            // Atualizar usuário
-            User userToUpdate = mapper.findById(newUser.getId());
-            userToUpdate.setEmail("joao.novo@example.com");
-            mapper.update(userToUpdate);
-            session.commit();
-            System.out.println("\nUsuário após atualização:");
-            System.out.println(mapper.findById(userToUpdate.getId()));
+//            // Atualizar usuário
+//            User userToUpdate = mapper.findById(newUser.getId());
+//            userToUpdate.setEmail("joao.novo@example.com");
+//            mapper.update(userToUpdate);
+//            session.commit();
+//            System.out.println("\nUsuário após atualização:");
+//            System.out.println(mapper.findById(userToUpdate.getId()));
 
 //            // Deletar usuário
 //            mapper.delete(userToUpdate.getId());
